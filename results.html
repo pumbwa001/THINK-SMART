@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="theme-color" content="#0a1931">
+<title>Smart Move Quiz Results</title>
+<link rel="stylesheet" href="style.css">
+<link rel="manifest" href="manifest.webmanifest">
+<style>
+.results{width:100%;max-width:420px;padding:24px;text-align:center}
+.results p{margin:18px 0;color:#7aa0d0}
+.results .buttons{margin-top:30px}
+</style>
+</head>
+<body>
+<main class="results">
+<h1>Quiz Complete</h1>
+<p id="result">Loading your result...</p>
+<p id="result-details" aria-live="polite"></p>
+<div class="buttons">
+<button class="btn play" onclick="location.href='quiz.html'">PLAY AGAIN <span>→</span></button>
+<button class="btn outline" onclick="location.href='index.html'">HOME</button>
+</div>
+</main>
+<script>
+const score = Number(localStorage.getItem("smartMoveScore"));
+const wrong = Number(localStorage.getItem("smartMoveWrong"));
+const played = Number(localStorage.getItem("smartMovePlayed"));
+const subject = localStorage.getItem("smartMoveSubject");
+const result = document.getElementById("result");
+const details = document.getElementById("result-details");
+if (
+  Number.isInteger(score) && score >= 0 &&
+  Number.isInteger(wrong) && wrong >= 0 &&
+  Number.isInteger(played) && played > 0 &&
+  score + wrong <= played
+) {
+  const subjectName = {
+    biology: "Biology",
+    chemistry: "Chemistry",
+    physics: "Physics",
+    mixed: "Mixed",
+  }[subject] || "Quiz";
+  result.textContent = `${subjectName} quiz complete.`;
+  details.textContent =
+    `Correct: ${score} · Wrong: ${wrong} · Questions played: ${played}`;
+} else {
+  result.textContent = "Complete a quiz to see your result.";
+  details.textContent = "";
+}
+</script>
+<script src="pwa.js"></script>
+</body>
+</html>

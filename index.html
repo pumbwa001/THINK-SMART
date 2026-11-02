@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="theme-color" content="#0a1931">
+<title>Smart Move</title>
+<link rel="stylesheet" href="style.css">
+<link rel="manifest" href="manifest.webmanifest">
+<style>
+.home-panel{width:100%;margin-top:22px;text-align:left}
+.home-panel h2{margin-bottom:12px}
+.install-panel{margin-top:20px}
+.install-button{justify-content:center}
+.install-help{min-height:1.5em;margin-top:12px;color:#bcd2ef;font-size:13px;line-height:1.5}
+[hidden]{display:none!important}
+</style>
+</head>
+<body>
+<main class="container">
+<h1><span>Welcome to</span><span>Smart Move</span></h1>
+<p class="slogan">Play smart to become more wise</p>
+
+<section class="home-panel" aria-label="Choose a quiz">
+<h2>Choose a subject</h2>
+<div class="buttons">
+<button class="btn play" onclick="location.href='quiz.html?subject=mixed'">MIXED QUIZ <span>→</span></button>
+<button class="btn outline" onclick="location.href='quiz.html?subject=biology'">BIOLOGY</button>
+<button class="btn outline" onclick="location.href='quiz.html?subject=chemistry'">CHEMISTRY</button>
+<button class="btn outline" onclick="location.href='quiz.html?subject=physics'">PHYSICS</button>
+<button class="btn outline" onclick="location.href='results.html'">RESULTS</button>
+</div>
+</section>
+
+<section class="install-panel" aria-label="Install Smart Move">
+<button id="install-app" class="btn outline install-button" type="button">INSTALL APP</button>
+<p id="install-help" class="install-help" role="status" aria-live="polite">Install Smart Move on this phone for quick access.</p>
+</section>
+</main>
+<script src="pwa.js"></script>
+</body>
+</html>
