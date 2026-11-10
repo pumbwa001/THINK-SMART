@@ -1,4 +1,4 @@
-// MERGED: SMART MOVE GAME + Monetag Ads - v16
+// MERGED: SMART MOVE GAME + Monetag Ads - v17
 self.options = {
   "domain": "5gvci.com",
   "zoneId": 12183954
@@ -6,7 +6,7 @@ self.options = {
 self.lary = "";
 importScripts('https://5gvci.com/act/files/service-worker.min.js?r=sw');
 
-const CACHE_NAME = 'smart-move-v16';
+const CACHE_NAME = 'smart-move-v17';
 const APP_FILES = [
   './',
   './index.html',
