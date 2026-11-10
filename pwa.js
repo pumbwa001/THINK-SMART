@@ -9,10 +9,11 @@ if (installButton && isInstalled) {
 }
 
 if (navigator.serviceWorker && window.isSecureContext) {
-  navigator.serviceWorker.register("./service-worker.js")
-    .catch((error) => {
-      console.error("Smart Move offline support could not be enabled.", error);
-    });
+  navigator.serviceWorker.register('sw.js').catch(error => {
+    return navigator.serviceWorker.register('./service-worker.js');
+  }).catch(error => {
+    console.error("Smart Move offline support could not be enabled.", error);
+  });
 }
 
 window.addEventListener("beforeinstallprompt", (event) => {
